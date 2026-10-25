@@ -1,4 +1,5 @@
-import * as fs from "fs-extra";
+import * as fs from "node:fs";
+import { readFile } from "node:fs/promises";
 import * as path from "path";
 import jsQR from "../src";
 import * as helpers from "./helpers";
@@ -10,7 +11,7 @@ describe("end to end", () => {
     it(t, async () => {
       const inputImage = await helpers.loadPng(path.join("tests", "end-to-end", t, "input.png"));
       const expectedOutput = JSON.parse(
-        await fs.readFile(path.join("tests", "end-to-end", t, "output.json"), "utf8"),
+        await readFile(path.join("tests", "end-to-end", t, "output.json"), "utf8"),
         (key, value) => key === 'matrix'
           // parse stringified matrix back into a BitMatrix
           ? new BitMatrix(new Uint8ClampedArray(Object.values(value.data)), value.width)

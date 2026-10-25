@@ -73,7 +73,7 @@ export interface GreyscaleWeights {
   useIntegerApproximation?: boolean;
 }
 
-const defaultOptions: Options = {
+const defaultOptions: Required<Options> = {
   inversionAttempts: "attemptBoth",
   greyScaleWeights: {
     red: 0.2126,
@@ -84,24 +84,16 @@ const defaultOptions: Options = {
   canOverwriteImage: true,
 };
 
-function mergeObject(target: any, src: any) {
-  Object.keys(src).forEach(opt => { // Sad implementation of Object.assign since we target es5 not es6
-    target[opt] = src[opt];
-  });
-}
-
 function jsQR(data: Uint8ClampedArray, width: number, height: number, providedOptions: Options = {}): QRCode | null {
-  const options = Object.create(null);
-  mergeObject(options, defaultOptions);
-  mergeObject(options, providedOptions);
+  const options: Required<Options> = Object.assign(Object.create(null), defaultOptions, providedOptions);
 
   const tryInvertedFirst = options.inversionAttempts === "onlyInvert" || options.inversionAttempts === "invertFirst";
   const shouldInvert = options.inversionAttempts === "attemptBoth" || tryInvertedFirst;
   const {binarized, inverted} = binarize(data, width, height, shouldInvert, options.greyScaleWeights,
       options.canOverwriteImage);
-  let result = scan(tryInvertedFirst ? inverted : binarized);
+  let result = scan(tryInvertedFirst ? inverted! : binarized);
   if (!result && (options.inversionAttempts === "attemptBoth" || options.inversionAttempts === "invertFirst")) {
-    result = scan(tryInvertedFirst ? binarized : inverted);
+    result = scan(tryInvertedFirst ? binarized : inverted!);
   }
   return result;
 }

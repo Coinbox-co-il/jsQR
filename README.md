@@ -1,4 +1,23 @@
-# jsQR
+# jsQR — Coinbox fork
+
+Maintained fork of [danimoh/jsQR](https://github.com/danimoh/jsQR), the `jsqr-es6`
+decoder used by Nimiq's QR scanner. The QR algorithm and existing fixtures are
+preserved. TypeScript 7 and esbuild replace the old build; the existing Jest suite
+runs locally on Node 26. There are no hosted workflows or self-hosted runners.
+
+```sh
+npm ci
+npm run check
+```
+
+Released npm tarballs are attached to this repository's GitHub releases. The
+scanner depends on a fixed release URL; consumers do not install build tools.
+ES module imports and CommonJS `require()` expose the existing decoder API.
+Node supplies filesystem operations and ICU support formerly supplied by packages.
+
+Upstream baseline: `danimoh/jsQR@94fea50594e82e642ce99a2cc6b956a4defa752c`.
+Coinbox's manual Patch Tuesday procedure checks for upstream changes. Build,
+typecheck, run all tests, and create release tarballs locally with `npm pack`.
 
 This project is a fork of [cozmo/jsQR](https://github.com/cozmo/jsQR) that provides an es6 build and contains several of the open pull requests of the original project which lately doesn't seem to be maintained much anymore.
 
@@ -16,7 +35,7 @@ This library takes in raw images and will locate, extract and parse any QR code 
 Available [on npm](https://www.npmjs.com/package/jsqr-es6). Can be used in a Node.js program or with a module bundler such as Webpack or Browserify.
 
 ```
-npm install jsqr-es6 --save
+npm install jsqr-es6@https://github.com/Coinbox-co-il/jsQR/releases/download/v1.4.1/coinbox-co-il-jsqr-1.4.1.tgz --save
 ```
 
 ```javascript

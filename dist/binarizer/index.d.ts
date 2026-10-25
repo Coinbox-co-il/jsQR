@@ -4,6 +4,6 @@ export declare function binarize(data: Uint8ClampedArray, width: number, height:
     binarized: BitMatrix;
     inverted: BitMatrix;
 } | {
-    binarized: BitMatrix;
     inverted?: undefined;
+    binarized: BitMatrix;
 };

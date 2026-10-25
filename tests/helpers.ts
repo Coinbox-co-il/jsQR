@@ -1,4 +1,4 @@
-import * as fs from "fs-extra";
+import * as fs from "node:fs/promises";
 import * as png from "upng-js";
 
 import { BitMatrix } from "../src/BitMatrix";
@@ -15,11 +15,12 @@ export function bitMatrixToPng(matrix: BitMatrix) {
       output[i + 3] = 0xff;
     }
   }
-  return new Buffer(png.encode([output.buffer], matrix.width, matrix.height, 0));
+  return Buffer.from(png.encode([output.buffer], matrix.width, matrix.height, 0));
 }
 
 export async function loadPng(path: string) {
-  const data = png.decode(await fs.readFile(path));
+  const file = await fs.readFile(path);
+  const data = png.decode(file.buffer.slice(file.byteOffset, file.byteOffset + file.byteLength));
   const out: {
     data: Uint8ClampedArray,
     height: number,

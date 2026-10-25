@@ -1,4 +1,4 @@
-import * as fs from "fs-extra";
+import * as fs from "node:fs/promises";
 import { loadBinarized } from "../../tests/helpers";
 import { BitMatrix } from "../BitMatrix";
 import { decode } from "./decoder";
