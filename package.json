@@ -1,13 +1,17 @@
 {
   "name": "@coinbox-co-il/jsqr",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "type": "module",
   "description": "Fork of jsqr (github.com/cozmo/jsQR) that builds a es-6 target and adds color correction and performance improvements.",
   "repository": "https://github.com/Coinbox-co-il/jsQR",
   "main": "./dist/jsQR.cjs",
   "module": "./dist/jsQR.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "sideEffects": false,
   "contributors": [
     {

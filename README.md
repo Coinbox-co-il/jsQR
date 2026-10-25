@@ -35,7 +35,7 @@ This library takes in raw images and will locate, extract and parse any QR code 
 Available [on npm](https://www.npmjs.com/package/jsqr-es6). Can be used in a Node.js program or with a module bundler such as Webpack or Browserify.
 
 ```
-npm install jsqr-es6@https://github.com/Coinbox-co-il/jsQR/releases/download/v1.4.1/coinbox-co-il-jsqr-1.4.1.tgz --save
+npm install jsqr-es6@https://github.com/Coinbox-co-il/jsQR/releases/download/v1.4.2/coinbox-co-il-jsqr-1.4.2.tgz --save
 ```
 
 ```javascript
