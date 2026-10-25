@@ -1,5 +1,5 @@
-import GenericGF, { addOrSubtractGF } from "./GenericGF";
-import GenericGFPoly from "./GenericGFPoly";
+import GenericGF, { addOrSubtractGF } from "./GenericGF.js";
+import GenericGFPoly from "./GenericGFPoly.js";
 
 function runEuclideanAlgorithm(field: GenericGF, a: GenericGFPoly, b: GenericGFPoly, R: number): GenericGFPoly[] {
   // Assume a's degree is >= b's

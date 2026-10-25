@@ -1,5 +1,4 @@
-// tslint:disable:no-bitwise
-import { BitStream } from "./BitStream";
+import { BitStream } from "./BitStream.js";
 
 export interface Chunk {
   type: Mode;

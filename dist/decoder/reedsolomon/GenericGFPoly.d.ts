@@ -1,4 +1,4 @@
-import GenericGF from "./GenericGF";
+import GenericGF from "./GenericGF.js";
 export default class GenericGFPoly {
     private field;
     private coefficients;

@@ -1,5 +1,5 @@
-import {BitMatrix} from "../BitMatrix";
-import {GreyscaleWeights} from "../index";
+import {BitMatrix} from "../BitMatrix.js";
+import {GreyscaleWeights} from "../index.js";
 
 const REGION_SIZE = 8;
 const MIN_DYNAMIC_RANGE = 24;
@@ -51,7 +51,6 @@ export function binarize(data: Uint8ClampedArray, width: number, height: number,
         const g = data[pixelPosition + 1];
         const b = data[pixelPosition + 2];
         greyscalePixels.set(x, y,
-          // tslint:disable-next-line no-bitwise
           (greyscaleWeights.red * r + greyscaleWeights.green * g + greyscaleWeights.blue * b + 128) >> 8);
       }
     }

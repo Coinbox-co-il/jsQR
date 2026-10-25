@@ -1,10 +1,9 @@
-import { BitMatrix } from "../BitMatrix";
-import { Point } from "../Point";
-import { decode as decodeData, DecodedQR } from "./decodeData";
-import { decode as rsDecode } from "./reedsolomon";
-import { Version, VERSIONS } from "./version";
+import { BitMatrix } from "../BitMatrix.js";
+import { Point } from "../Point.js";
+import { decode as decodeData, DecodedQR } from "./decodeData/index.js";
+import { decode as rsDecode } from "./reedsolomon/index.js";
+import { Version, VERSIONS } from "./version.js";
 
-// tslint:disable:no-bitwise
 function numBitsDiffering(x: number, y: number) {
   let z = x ^ y;
   let bitCount = 0;
@@ -18,7 +17,6 @@ function numBitsDiffering(x: number, y: number) {
 function pushBit(bit: any, byte: number) {
   return (byte << 1) | bit;
 }
-// tslint:enable:no-bitwise
 
 const FORMAT_INFO_TABLE = [
   { bits: 0x5412, formatInfo: { errorCorrectionLevel: 1, dataMask: 0 } },

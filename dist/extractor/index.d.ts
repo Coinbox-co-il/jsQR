@@ -1,5 +1,5 @@
-import { BitMatrix } from "../BitMatrix";
-import { QRLocation } from "../locator";
+import { BitMatrix } from "../BitMatrix.js";
+import { QRLocation } from "../locator/index.js";
 export declare function extract(image: BitMatrix, location: QRLocation): {
     matrix: BitMatrix;
     mappingFunction: (x: number, y: number) => {

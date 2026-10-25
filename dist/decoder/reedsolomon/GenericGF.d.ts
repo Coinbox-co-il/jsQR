@@ -1,4 +1,4 @@
-import GenericGFPoly from "./GenericGFPoly";
+import GenericGFPoly from "./GenericGFPoly.js";
 export declare function addOrSubtractGF(a: number, b: number): number;
 export default class GenericGF {
     primitive: number;

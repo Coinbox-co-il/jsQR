@@ -1,10 +1,10 @@
-import {binarize} from "./binarizer";
-import {BitMatrix} from "./BitMatrix";
-import {Chunks} from "./decoder/decodeData";
-import {decode} from "./decoder/decoder";
-import { Version } from "./decoder/version";
-import {extract} from "./extractor";
-import {locate, Point} from "./locator";
+import {binarize} from "./binarizer/index.js";
+import {BitMatrix} from "./BitMatrix.js";
+import {Chunks} from "./decoder/decodeData/index.js";
+import {decode} from "./decoder/decoder.js";
+import { Version } from "./decoder/version.js";
+import {extract} from "./extractor/index.js";
+import {locate, Point} from "./locator/index.js";
 
 export interface QRCode {
   binaryData: number[];

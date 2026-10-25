@@ -1,6 +1,6 @@
 {
   "name": "@coinbox-co-il/jsqr",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "type": "module",
   "description": "Fork of jsqr (github.com/cozmo/jsQR) that builds a es-6 target and adds color correction and performance improvements.",
   "repository": "https://github.com/Coinbox-co-il/jsQR",
@@ -39,8 +39,9 @@
   "scripts": {
     "build": "node scripts/build.mjs && tsc --emitDeclarationOnly",
     "typecheck": "tsc --noEmit && tsc -p tests/tsconfig.json --noEmit",
+    "check:types": "tsc --ignoreConfig --noEmit --module nodenext --moduleResolution nodenext --types node dist/index.d.ts",
     "test": "jest --runInBand",
-    "check": "npm run typecheck && npm run build && npm test",
+    "check": "npm run typecheck && npm run build && npm run check:types && npm test",
     "generate-test-data": "node scripts/generate-test-data.mjs",
     "prepack": "npm run build"
   },
@@ -52,6 +53,9 @@
     ],
     "transform": {
       "^.+\\.ts$": "<rootDir>/scripts/jest-transform.cjs"
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
     },
     "cacheDirectory": "<rootDir>/node_modules/.cache/jest"
   }

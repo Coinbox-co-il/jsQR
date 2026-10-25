@@ -1,4 +1,4 @@
-import { BitMatrix } from "../BitMatrix";
+import { BitMatrix } from "../BitMatrix.js";
 export interface Point {
     x: number;
     y: number;

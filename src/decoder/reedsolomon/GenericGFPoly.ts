@@ -1,4 +1,4 @@
-import GenericGF, { addOrSubtractGF } from "./GenericGF";
+import GenericGF, { addOrSubtractGF } from "./GenericGF.js";
 
 export default class GenericGFPoly {
   private field: GenericGF;

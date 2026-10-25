@@ -1,7 +1,7 @@
-import GenericGFPoly from "./GenericGFPoly";
+import GenericGFPoly from "./GenericGFPoly.js";
 
 export function addOrSubtractGF(a: number, b: number) {
-  return a ^ b; // tslint:disable-line:no-bitwise
+  return a ^ b;
 }
 
 export default class GenericGF {
@@ -26,7 +26,7 @@ export default class GenericGF {
       this.expTable[i] = x;
       x = x * 2;
       if (x >= this.size) {
-        x = (x ^ this.primitive) & (this.size - 1); // tslint:disable-line:no-bitwise
+        x = (x ^ this.primitive) & (this.size - 1);
       }
     }
 

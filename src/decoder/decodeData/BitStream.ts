@@ -1,4 +1,3 @@
-// tslint:disable:no-bitwise
 
 export class BitStream {
   private bytes: Uint8ClampedArray;

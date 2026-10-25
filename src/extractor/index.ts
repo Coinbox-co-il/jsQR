@@ -1,5 +1,5 @@
-import {BitMatrix} from "../BitMatrix";
-import {Point, QRLocation} from "../locator";
+import {BitMatrix} from "../BitMatrix.js";
+import {Point, QRLocation} from "../locator/index.js";
 
 interface PerspectiveTransform {
   a11: number;

@@ -91,7 +91,6 @@ function binarize(data, width, height, returnInverted, greyscaleWeights, canOver
         greyscalePixels.set(
           x,
           y,
-          // tslint:disable-next-line no-bitwise
           greyscaleWeights.red * r + greyscaleWeights.green * g + greyscaleWeights.blue * b + 128 >> 8
         );
       }

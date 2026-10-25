@@ -1,6 +1,6 @@
-import { BitMatrix } from "./BitMatrix";
-import { Chunks } from "./decoder/decodeData";
-import { Point } from "./locator";
+import { BitMatrix } from "./BitMatrix.js";
+import { Chunks } from "./decoder/decodeData/index.js";
+import { Point } from "./locator/index.js";
 export interface QRCode {
     binaryData: number[];
     data: string;

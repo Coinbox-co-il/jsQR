@@ -1,4 +1,4 @@
-import { BitMatrix } from "../BitMatrix";
+import { BitMatrix } from "../BitMatrix.js";
 
 const MAX_FINDERPATTERNS_TO_SEARCH = 5;
 const MIN_QUAD_RATIO = 0.5;
