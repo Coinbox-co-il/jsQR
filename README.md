@@ -12,7 +12,7 @@ For camera access, image-file loading and continuous scanning, use
 Install the GitHub release under the existing package name:
 
 ```sh
-npm install jsqr-es6@https://github.com/Coinbox-co-il/jsQR/releases/download/v1.4.3/coinbox-co-il-jsqr-1.4.3.tgz --save
+npm install jsqr-es6@https://github.com/Coinbox-co-il/jsQR/releases/download/v1.4.4/coinbox-co-il-jsqr-1.4.4.tgz --save
 ```
 
 ES module:
